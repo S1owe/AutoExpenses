@@ -83,7 +83,7 @@
         .then(coordinates => {
           this.coordinates = coordinates;
         })
-        .catch(error => alert(error));
+        //.catch(error => alert(error));
     },
     methods: {
       onMapClick(e) {

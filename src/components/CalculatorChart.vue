@@ -6,13 +6,13 @@
     extends: Line,
     data () {
       return {
-        car_pricess: 1,
+        car_prices: [1, 5, 3, 8],
         chartData: {
           labels: ["2020 год", "2022 год", "2023 год", "2024 год"],
           datasets: [
             {
               label: 'Себестоимость',
-              data: [this.car_pricess,  1, 1, 1],
+              data: [1, 3, 8, 4],
               fill: false,
               borderColor: '#2554FF',
               backgroundColor: '#2554FF',
@@ -45,6 +45,9 @@
       }
     },
     created() {
+      bus.$on('car_response_1[0]', data => {
+        this.car_prices[0] = data;
+      })
       bus.$on('car_response_1[1]', data => {
         this.car_prices[1] = data;
       })

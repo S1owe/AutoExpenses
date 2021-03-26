@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="123a1e33-8eff-40a9-aed4-ceb47dde9f0c" name="Default Changelist" comment="" />
+    <list default="true" id="123a1e33-8eff-40a9-aed4-ceb47dde9f0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Events/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel-echo-server.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel-echo-server.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/AuthPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/CalculatorChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/CalculatorPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Chat.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/Map.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/MapMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/MapMenuChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/MapPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/components/MapSlider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/private.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +70,17 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -119,18 +190,51 @@
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/jaeger/phpquery-single" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oOqf8TrLIi0rA8xeY1qJEmxIUq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="ts.external.directory.path" value="E:\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ANY_PROJECTS\service\resources\views" />
+      <recent name="E:\ANY_PROJECTS\service\resources" />
+      <recent name="E:\ANY_PROJECTS\service\resources\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ANY_PROJECTS\service\resources" />
+      <recent name="E:\ANY_PROJECTS\service\resources\components" />
+      <recent name="E:\ANY_PROJECTS\service\public" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -148,24 +252,140 @@
       <updated>1613168084284</updated>
       <workItem from="1613168085358" duration="2947000" />
       <workItem from="1613225055625" duration="26502000" />
+      <workItem from="1613322147061" duration="4431000" />
+      <workItem from="1613326851729" duration="75000" />
+      <workItem from="1613326997297" duration="234000" />
+      <workItem from="1613340691880" duration="253000" />
+      <workItem from="1613831137711" duration="3999000" />
+      <workItem from="1613836721557" duration="11283000" />
+      <workItem from="1613851979450" duration="156000" />
+      <workItem from="1613854797894" duration="1673000" />
+      <workItem from="1613918558697" duration="9248000" />
+      <workItem from="1613932879514" duration="2727000" />
+      <workItem from="1613935680334" duration="643000" />
+      <workItem from="1613936375416" duration="1451000" />
+      <workItem from="1613937853898" duration="1540000" />
+      <workItem from="1614003594476" duration="4284000" />
+      <workItem from="1614066912198" duration="1250000" />
+      <workItem from="1614237984648" duration="295000" />
+      <workItem from="1614238329283" duration="12290000" />
+      <workItem from="1614330598503" duration="6858000" />
+      <workItem from="1614338216774" duration="3813000" />
+      <workItem from="1614602073358" duration="332000" />
+      <workItem from="1614621240567" duration="18000" />
+      <workItem from="1614623912945" duration="284000" />
+      <workItem from="1614688202620" duration="4603000" />
+      <workItem from="1614978180840" duration="21976000" />
+      <workItem from="1615144271204" duration="7794000" />
+      <workItem from="1615197414695" duration="446000" />
+      <workItem from="1615206205068" duration="2363000" />
+      <workItem from="1615220366963" duration="2955000" />
+      <workItem from="1615226945821" duration="4022000" />
+      <workItem from="1615756273168" duration="13328000" />
+      <workItem from="1615825148768" duration="17844000" />
+      <workItem from="1616063760881" duration="9901000" />
+      <workItem from="1616074227294" duration="234000" />
+      <workItem from="1616074484338" duration="7320000" />
+      <workItem from="1616091433101" duration="22327000" />
+      <workItem from="1616412125396" duration="16398000" />
+      <workItem from="1616515906679" duration="4049000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="420" y="187" key="#Deployment" timestamp="1615830000186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="420" y="187" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1615830000186" />
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1615829999449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040@0.0.1920.1040" timestamp="1615829999449" />
+    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614259649288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614259649288" />
     <state x="731" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613227090061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="731" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613227090061" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613228569369">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615123059561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613228569369" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615123059561" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616067641739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616067641739" />
+    <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1616073721089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="432" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1616073721089" />
+    <state width="916" height="284" key="GridCell.Tab.0.bottom" timestamp="1615131288365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615131288365" />
+    <state width="916" height="284" key="GridCell.Tab.0.center" timestamp="1615131288365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615131288365" />
+    <state width="916" height="284" key="GridCell.Tab.0.left" timestamp="1615131288365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615131288365" />
+    <state width="916" height="284" key="GridCell.Tab.0.right" timestamp="1615131288365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615131288365" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1613227932406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613227932406" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1616086381278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616086381278" />
+    <state x="816" y="419" key="WebDeployment.AddServerDialog.v.1" timestamp="1614259851033">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="816" y="419" key="WebDeployment.AddServerDialog.v.1/0.0.1920.1040@0.0.1920.1040" timestamp="1614259851033" />
+    <state x="208" y="161" width="1507" height="655" key="dock-window-1" timestamp="1615812458195">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="208" y="161" width="1507" height="655" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1615812458195" />
+    <state x="845" y="250" key="ftp.server.browser" timestamp="1614978381938">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1614978381938" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1616407530466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616407530466" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616095698084">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616095698084" />
+    <state x="781" y="301" key="webDeployment.PermissionsDialog" timestamp="1615145147464">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="781" y="301" key="webDeployment.PermissionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615145147464" />
   </component>
 </project>

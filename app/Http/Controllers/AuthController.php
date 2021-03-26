@@ -26,8 +26,7 @@ class AuthController extends Controller
 
         if (DB::table('users')->where('email', $valid['email'])->exists()) {
             return response()->json([
-                'auth' => 'false',
-                'Error' => 'Такой уже зарегистрирован'
+                'error' => 'Такой пользователь уже зарегистрирован'
             ]);
         };
 
@@ -35,34 +34,47 @@ class AuthController extends Controller
         if ($user) {
             Auth::login($user);
             return response()->json([
-                'auth' => 'true'
+                'auth' => 'true',
+                'user' => $user->except('password')
+
             ]);
         }
         return response()->json([
-            'auth' => 'false',
-            'Error' => 'Произошла ошибка'
+            'error' => 'Произошла ошибка'
         ]);
     }
 
     public function login(Request $request)
     {
+
         if (Auth::check()) {
             return response()->json([
-                'auth' => 'true'
+                'auth' => 'true',
+
             ]);
         }
-
+        $remember = $request->remember;
         $login = $request->only('email', 'password');
-        $user=DB::table('users')->select('email','password','name','id')->where('email',$login['email'])->where('password',$login['password'])->first();
+        $user=DB::table('users')->select('email','name','id')->where('email',$login['email'])->where('password',$login['password'])->first();
+
         if ($user) {
-            Auth::loginUsingId($user->id);
-            return response()->json([
-                'auth' => 'true'
-            ]);
+            if($remember=="true"){
+                Auth::loginUsingId($user->id,true);
+                return response()->json([
+                    'auth' => 'true',
+                    'user' => $user
+                ]);
+            }else {
+                Auth::loginUsingId($user->id);
+                return response()->json([
+                    'auth' => 'true',
+                    'user' => $user
+                ]);
+            }
+
         }
         return response()->json([
-            'auth' => 'false',
-            'Error' => 'Неправильный логин или пароль'
+            'error' => 'Неправильный логин или пароль'
         ]);
     }
 
@@ -77,5 +89,9 @@ class AuthController extends Controller
         return response()->json([
             'auth' => 'false'
         ]);
+    }
+    public function init(){
+        $user = Auth::user();
+        return ["user"=>$user];
     }
 }

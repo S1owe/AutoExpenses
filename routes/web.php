@@ -15,33 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', '\App\Http\Controllers\MainController@index');
-/*Route::get('/login', function(){
-    if(Auth::check()) {
-        return response()->json([
-            'auth' => 'true'
-        ]);
-    }
-});*/
-//Route::post('/login', '\App\Http\Controllers\LoginController@login');
-//Route::post('/register','\App\Http\Controllers\RegisterController@reg');
 
-Route::name('user.')->group(function(){
-    //Route::view('/private', 'private')->middleware('auth')->name('private');
+Route::get('/', '\App\Http\Controllers\MainController@auth')->name('auth');
 
-    Route::get('/auth', function(){
-        if(Auth::check()){
-            return response()->json([
-                'auth' => 'true'
-            ]);
-        }
-        return  response()->json([
-            'auth' => 'false'
-        ]);
-    })->name('auth');
-    Route::post('/login','\App\Http\Controllers\AuthController@login');
-    Route::post('/register','\App\Http\Controllers\AuthController@register');
-    Route::get('/logout','\App\Http\Controllers\AuthController@logout')->name('logout');
-
+Route::post('/message',function(\Illuminate\Http\Request $request){
+    \App\Events\Message::dispatch($request->input('body'));
 });
 

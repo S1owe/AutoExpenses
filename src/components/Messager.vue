@@ -8,13 +8,13 @@
   		</div>
   		<div class="messager_main">
         <div class="question_name" v-if="question_block_status == true">
-          <div class="message_block-title">Введите тему вопроса:</div>
+          <div class="message_block-title">Введите почту человека, с кем хотите начать диалог:</div>
           <div class="quest_block">
             <input type="text" placeholder="Введите сообщение" class="input_quest" v-model="question">
             <div class="quest_button" v-on:click="question_add">Готово</div>
           </div>
           <div class="question_error" v-if="question_error_status == true">
-            <div class="message_block-title quest_error"><span>Ошибка: Нельзя оставлять поле пустым</span></div>
+            <div class="message_block-title quest_error"><span>{{ new_chat_error }}</span></div>
           </div>
         </div>
   			<div class="messager_left">
@@ -51,21 +51,24 @@
   				<div class="message_time">
   					13 октября 2020 г.
   				</div>
-  				<div class="message-1">
-					<div class="message_nick">Менеджер AutoExpenses</div>
-					<div class="message_message_1">Здравствуйте, можете задавать любые вопросы, возникающие по теме авто</div>
-					<div class="message_time_main">20:27</div>
-  				</div>
-  				<div class="message-2">
+          <div v-for='(message, index) in messages'>
+    				<div class="message-1">
+    					<div class="message_nick">Менеджер AutoExpenses</div>
+    					<div class="message_message_1">Здравствуйте, можете задавать любые вопросы, возникающие по теме авто</div>
+    					<div class="message_time_main">20:27</div>
+    				</div>
+          </div>
+  				<!--<div class="message-2">
 					<div class="message_message_2">Здравствуйте, интересует возможность произвести калькуляцию затрат на мой автомобиль Hyundai Solaris 2018 г. выпуска </div>
 					<div class="message_time_main">20:27</div>
-  				</div>
+  				</div>-->
   				<form>
   				<div class="message_input">
   					<input type="text" placeholder="Введите сообщение" class="messagerr" v-model="letter_text">
   					<div class="messagerr" v-on:click="letter"></div>
   				</div>
   				</form>
+          <div style="color: red;" v-on:click="add_button">Добавить</div>
   			</div>
   		</div>
   	</div>
@@ -74,7 +77,7 @@
   .quest_error span{background-color: rgba(220, 20, 60, 0.6); color: white;}
   .question_title {display: flex; align-items: center;}
   .quest_block {display: flex; align-items: center;}
-  .question_name {width: 450px; height: 130px; background-color: #ADD8E6; border-radius: 0px 0px 6px 0px; position: absolute; top: 0; left: 0; z-index: 5; border: 2px solid #0066CC;}
+  .question_name {width: 450px; height: 150px; background-color: #ADD8E6; border-radius: 0px 0px 6px 0px; position: absolute; top: 0; left: 0; z-index: 5; border: 2px solid #0066CC;}
   .quest_button {font-family: 'Proxima Nova Rg'; font-size: 22px; color: white; font-weight: 300; background-color: #0066CC; border: 2px solid #0066CC; padding: 5px 5px; margin-left: 10px; cursor: pointer;}
 	.messager {width: 1077px; height: 740px; background-color: white; border-radius: 6px 6px 0px 0px; border: 1px solid #0066CC;}
 	.messager_title {width: 100%; height: 62px; background-color: #0066CC; display: flex; align-items: center; padding: 0 26px; justify-content: space-between;}
@@ -115,10 +118,16 @@
         question_block_status: false,
         question: '',
         question_error_status: false,
-        letter_text: ''
+        letter_text: '',
+        messages: [],
+        chat_id: '',
+        new_chat_error: ''
       }
     },
     methods: {
+      add_button() {
+        this.messages.push({});
+      },
       messager_title_close() {
         bus.$emit('messager_title_close', this.messager_title_close_value)
       },
@@ -133,23 +142,28 @@
           this.chats.push({
             quest: this.question
           });
-          this.question = ''
           axios
-            .get('/new_chat?email=123')
+            .get('l14.creativityprojectcenter.ru/new_chat?email=' + this.question)
             .then(response => {
+              if (response.data.new_chat.error != 'Чат уже создан') {
+                this.chat_id = response.data.new_chat.user.id;
+              } else {
+                this.question_error_status = true,
+                this.new_chat_error = 'Ошибка: Чат с данным пользователем уже создан',
+                this.question_block_status = true
+              }
               console.log(response)
+              console.log('id чата' + this.chat_id + 1)
             })
-          axios
-            .get('/load_chats')
-            .then(response => {
-              console.log('вот тут начинается chats/load')
-              console.log(response)
-            })
-        } else {this.question_error_status = true}
+        } else {
+          this.question_error_status = true,
+          this.new_chat_error = 'Ошибка: Нельзя оставлять поле пустым'
+        }
+        this.question = ''
       },
       letter() {
         if (this.letter_text != '' ) {
-          axios.post('/message',{
+          axios.post('l14.creativityprojectcenter.ru/message',{
             message: this.letter_text,
             chat_id:2
           });
@@ -157,7 +171,12 @@
       }
     },
     created() {
-      console.log('креатед вызвался')
+      axios
+      .get('l14.creativityprojectcenter.ru/load_chats')
+      .then(response => {
+        console.log('вот тут начинается chats/load')
+        console.log(response)
+      })
     }
   }
 </script>

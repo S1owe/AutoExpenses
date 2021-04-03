@@ -99,10 +99,7 @@
       })
       bus.$on('marker_delete', data => {
         this.marker_id_delete = data;
-        this.marker_id_delete = this.marker_id_delete + 1;
         this.markers.splice(this.marker_id_delete, 1);
-        console.log('Удалился индекс: ' + this.marker_id_delete)
-
         const parsed = JSON.stringify(this.markers);
         localStorage.setItem('markers', parsed);
       })

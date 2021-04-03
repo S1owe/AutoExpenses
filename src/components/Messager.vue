@@ -101,7 +101,7 @@
 	.message_input {position: absolute; bottom: 0; left: 50%; transform: translate(-50%, -50%); border-radius: 2px; border: 2px solid #D7DEE9; display: flex; align-items: center; padding-right: 13px;}
 	input[type="text"].messagerr {width: 645px; outline: none; font-family: 'Proxima Nova Rg'; font-weight: normal; font-size: 18px; color: #7C8793; color: black; padding: 0 13px; -webkit-appearance: none; border: 0;}
   input[type="text"].input_quest {width: 300px; outline: none; font-family: 'Proxima Nova Rg'; font-weight: normal; font-size: 18px; color: #7C8793; color: black; padding: 0 13px; -webkit-appearance: none; border: 0; height: 40px; margin-left: 25px;}
-	input[type="submit"].messagerr {width: 16px; height: 11px; border: none; background: url(../assets/icon.png) no-repeat; cursor: pointer;}
+	div.messagerr {width: 16px; height: 11px; border: none; background: url(../assets/icon.png) no-repeat; cursor: pointer;}
 </style>
 <script>
   import { bus } from '../main'
@@ -135,12 +135,12 @@
           });
           this.question = ''
           axios
-            .get('http://service.auto.xsph.ru/new_chat?email=123')
+            .get('/new_chat?email=123')
             .then(response => {
               console.log(response)
             })
           axios
-            .get('http://service.auto.xsph.ru/load_chats')
+            .get('/load_chats')
             .then(response => {
               console.log('вот тут начинается chats/load')
               console.log(response)
@@ -155,6 +155,9 @@
           });
         }
       }
+    },
+    created() {
+      console.log('креатед вызвался')
     }
   }
 </script>

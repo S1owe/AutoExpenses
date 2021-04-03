@@ -104,7 +104,7 @@
         if (this.mark_choosen != '' && this.model_choosen != '' && this.calc_service != '' && this.calc_fuel != '' && this.calc_fuel_type != '' && this.calc_tax != '') {
           if (!isNaN(this.calc_service) && !isNaN(this.calc_fuel) && !isNaN(this.calc_fuel_type) && !isNaN(this.calc_tax)) {
             axios
-              .get('http://service.auto.xsph.ru/calc?mark=' + this.mark_choosen + '&model=' + this.model_choosen + '&service=' + this.calc_service + '&fuel=' + this.calc_fuel + '&fuel_type=' + this.calc_fuel_type + '&tax=' + this.calc_tax)
+              .get('/calc?mark=' + this.mark_choosen + '&model=' + this.model_choosen + '&service=' + this.calc_service + '&fuel=' + this.calc_fuel + '&fuel_type=' + this.calc_fuel_type + '&tax=' + this.calc_tax)
               .then(response => {
                 this.car_response = response.data,
                 bus.$emit('car_response', this.car_response)
@@ -123,7 +123,7 @@
       mark_click() {
         if (this.model_choosen != '') {this.model_choosen = ''}
         axios
-          .get('http://service.auto.xsph.ru/marks')
+          .get('/marks')
           .then(response => {
             this.options_1 = response.data
           })
@@ -134,7 +134,7 @@
       model_click() {
         if (this.mark_choosen == '') {this.click_status_text= 'Выберите марку автомобиля'}
         axios
-          .get('http://service.auto.xsph.ru/models?model=' + this.mark_choosen)
+          .get('/models?model=' + this.mark_choosen)
           .then(response => {
             this.options_2 = response.data
           })

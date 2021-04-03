@@ -125,7 +125,7 @@
 				this.info_block_auth = false
 				if (this.email_login != '' && this.password_login != '') {
 					axios
-	  				.post('http://service.auto.xsph.ru/login', {
+	  				.post('/login', {
 	  					email: this.email_login,
 	    				password: this.password_login,
 	    				remember: this.remember_me
@@ -155,7 +155,7 @@
 					if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email_register)) {
 						if (this.password_register == this.password_register_confirm) {
 							axios
-			  				.post('http://service.auto.xsph.ru/register', {
+			  				.post('/register', {
 			  					name: this.name_register,
 			    				email: this.email_register,
 			    				password: this.password_register

@@ -53,7 +53,7 @@
 		methods: {
 			logout() {
 				axios
-			      .get('http://service.auto.xsph.ru/logout')
+			      .get('/logout')
 			      .then(response => {
 			      	console.log(response)
 			      	this.$router.push('/')
@@ -62,7 +62,7 @@
 		},
 		created() {
 			axios
-      			.get('http://service.auto.xsph.ru/init')
+      			.get('/init')
 			     .then(response => {
 			     	console.log(response.data.user.name)
 			        this.user_name = response.data.user.name

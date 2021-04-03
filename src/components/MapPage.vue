@@ -16,7 +16,7 @@
   		  <div class="map-page__title">
         		<h1>Мои путешествия</h1>
       	</div>
-      	<div class="map-page__suptitle">
+      	<div class="map-page__suptitle" v-on:click="checkk">
         		<p>В хронологии на Google Картах вы можете посмотреть свои маршруты, а также места, в которых вы побывали. Это приблизительная информация, которая определяется на основе истории местоположений. Вы также можете изменить или удалить информацию в хронологии. Ваша хронология видна только вам и доступна как на мобильных устройствах, так и на компьютере.</p>
       	</div>
       	<div class="map-page__main">
@@ -101,6 +101,7 @@
         marker_description: '',
         marker_description_window_type: -1,
         message_block_status: -1,
+        checkkk: '',
         swiperOption: {
           slidesPerView: 'auto',
           spaceBetween: 10,
@@ -131,8 +132,10 @@
           description: this.marker_description_get,
           id: this.marker_interface_id
         });
+        this.checkkk = this.items[this.items.length-1].description;
         const parsed = JSON.stringify(this.items);
         localStorage.setItem('items', parsed);
+
       },
       marker_delete(item) {
         if(this.marker_description != undefined) {
@@ -149,6 +152,11 @@
         if(this.marker_description != undefined) {
           this.marker_description_window_type = this.marker_description_window_type * -1
         }
+        console.log(items[0].description)
+      },
+      checkk() {
+        console.log('hsbefmiwergfihb')
+        console.log(this.checkkk)
       }
 	  },
     created() {

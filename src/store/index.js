@@ -6,16 +6,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    username: ''
+    my_small_time: ''
   },
   mutations: {
-    getusername (state) {
-      axios
-      .get('http://service.auto.xsph.ru/init')
-      .then(response => {
-        console.log(response)
-        this.username = response.data.user.name
-      })
-    }
+    
   }
 })

@@ -21,11 +21,11 @@
           <swiper class="swiper" :options="swiperOption">
             <div v-for='(chat, index) in chats'>
               <swiper-slide>
-        				<div class="message_block" @click="my_chat_id = chat.id" v-on:click="chat_listen">
+        				<div class="message_block" @click="my_chat_id = chat.id" v-on:click="chat_listen(index)">
                   <div v-on:click="local_messages = chat.messages" @click="name = chat.with.name">
-          					<div class="message_block-time">13 окт.</div>
-          					<div class="message_block-title">{{ chat.with.name }}</div>
-          					<div class="message_block-suptitle">Менеджер Антон</div>
+          					<div class="message_block-time">{{ getNowChat() }}</div>
+          					<div class="message_block-title">Чат с пользователем {{ chat.with.name }}</div>
+          					<div class="message_block-suptitle">{{ chat.with.email }}</div>
                   </div>
         				</div>
               </swiper-slide>
@@ -39,17 +39,17 @@
           <swiper class="swiper" :options="swiperOption">
             <swiper-slide class="text">
               <div>
-        				<div class="message_status">
+        				<div class="message_status" v-if="lish == true">
         					<span>Чат создан</span>
         				</div>
-        				<div class="message_time">
-        					13 октября 2020 г.
+        				<div class="message_time" v-if="lish == true">
+        					{{ getNow() }}
         				</div>
-                <div v-for='(message, index) in messages'>
-          				<div class="message-1">
-          					<div class="message_nick">{{ name }}</div>
+                <div v-for='(message, index) in messages' :key='messages_key'>
+          				<div class="message-1" v-bind:class="{ 'message-2': message.sender_name == myname }">
+          					<div class="message_nick">{{ message.sender_name }}</div>
           					<div class="message_message_1">{{ message.message }}</div>
-          					<div class="message_time_main">20:27</div>
+          					<div class="message_time_main">{{ small_time(message.created_at) }}</div>
           				</div>
                 </div>
               </div>
@@ -99,12 +99,14 @@
 	.message_nick {font-family: 'Proxima Nova Rg'; font-size: 16px; color: #0066CC; font-weight: 300; padding: 18px;}
 	.message_message_1 {font-family: 'Proxima Nova Rg'; font-size: 14px; color: #7C8793; font-weight: 300; padding-left: 18px; margin-top: -12px;}
 	.message_time_main {font-family: 'Proxima Nova Rg'; font-size: 12px; color: #7C8793; font-weight: 300; position: absolute; bottom: 12px; right: 10px;}
-	.message-2 {width: 400px; height: 92px; background-color: #e6f0fa; border-radius: 12px 12px 0px 12px; position: relative; margin-top: 26px; float: right;}
+	.message-2 {background-color: #e6f0fa !important; border-radius: 12px 12px 0px 12px !important; float: right !important;}
 	.message_message_2 {font-family: 'Proxima Nova Rg'; font-size: 14px; color: #7C8793; font-weight: 300; padding-left: 18px; height: 92px; display: flex;align-items: center;}
 	.message_input {position: absolute; bottom: 0; left: 50%; transform: translate(-50%, -50%); border-radius: 2px; border: 2px solid #D7DEE9; display: flex; align-items: center; padding-right: 13px;}
 	input[type="text"].messagerr {width: 645px; outline: none; font-family: 'Proxima Nova Rg'; font-weight: normal; font-size: 18px; color: #7C8793; color: black; padding: 0 13px; -webkit-appearance: none; border: 0;}
   input[type="text"].input_quest {width: 300px; outline: none; font-family: 'Proxima Nova Rg'; font-weight: normal; font-size: 18px; color: #7C8793; color: black; padding: 0 13px; -webkit-appearance: none; border: 0; height: 40px; margin-left: 25px;}
 	div.messagerr {width: 16px; height: 11px; border: none; background: url(../assets/icon.png) no-repeat; cursor: pointer;}
+
+
 </style>
 <script>
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
@@ -126,6 +128,7 @@
         question: '',
         question_error_status: false,
         letter_text: '',
+        lish: false,
         messages: [],
         chat_id: '',
         new_chat_error: '',
@@ -133,6 +136,11 @@
         message_month: '',
         my_chat_id: '',
         name: '',
+        myname: '',
+        myid: '',
+        local_index: '',
+        messages_key: 0,
+        names: [],
         messages_time: [],
         local_messages: [],
         swiperOption: {
@@ -147,6 +155,12 @@
       }
     },
     methods: {
+      small_time(str) {
+        return str.substring(str.lastIndexOf('T')+1,str.lastIndexOf('.'))
+      },
+      nosmall_time(str) {
+        return str.substring(0,str.lastIndexOf('T'))
+      },
       add_button() {
         //this.messages.push({});
         console.log('Время: ' + this.timestamp)
@@ -188,36 +202,103 @@
       },
       letter() {
         if (this.letter_text != '' ) {
-          axios.post('/message',{
+          axios.post('/message', {
             message: this.letter_text,
-            chat_id:2
-          });
+            chat_id: this.my_chat_id
+          })
+          .then(response => {
+            axios.get('/load_chats')
+            .then(response => {
+              console.log(response.data.chats[this.local_index].messages)
+              this.messages = response.data.chats[this.local_index].messages,
+              this.letter_text = ''
+            })
+          })
         }
       },
-      chat_listen() {
+      chat_listen(index) {
+        this.lish = true,
+        this.local_index = this.chats.indexOf(this.chats[index]),
         window.Echo.private('chat.' + this.my_chat_id)
         .listen('PrivateChat',({data})=>{
-          console.log(data.message);
+          axios.get('/load_chats')
+          .then(response => {
+            //console.log(response.data.chats[this.local_index].messages)
+            this.messages = response.data.chats[this.local_index].messages
+          })
         }),
         this.messages = this.local_messages
         console.log('ID чата: ' + this.my_chat_id)
       },
       getNow() {
-        const today = new Date();
-        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        const dateTime = date +' '+ time;
-        this.timestamp = dateTime;
-      }
+        var Data = new Date();
+        var Year = Data.getFullYear();
+        var Month = Data.getMonth();
+        var Day = Data.getDate();
+        switch (Month)
+        {
+          case 0: Month="января"; break;
+          case 1: Month="февраля"; break;
+          case 2: Month="марта"; break;
+          case 3: Month="апреля"; break;
+          case 4: Month="мае"; break;
+          case 5: Month="июня"; break;
+          case 6: Month="июля"; break;
+          case 7: Month="августа"; break;
+          case 8: Month="сентября"; break;
+          case 9: Month="октября"; break;
+          case 10: Month="ноября"; break;
+          case 11: Month="декабря"; break;
+        }
+        return Day + ' ' + Month + ' ' + Year + ' г.'
+      },
+      getNowChat() {
+        var Data = new Date();
+        var Year = Data.getFullYear();
+        var Month = Data.getMonth();
+        var Day = Data.getDate();
+        switch (Month)
+        {
+          case 0: Month="января"; break;
+          case 1: Month="февраля"; break;
+          case 2: Month="марта"; break;
+          case 3: Month="апреля"; break;
+          case 4: Month="мае"; break;
+          case 5: Month="июня"; break;
+          case 6: Month="июля"; break;
+          case 7: Month="августа"; break;
+          case 8: Month="сентября"; break;
+          case 9: Month="октября"; break;
+          case 10: Month="ноября"; break;
+          case 11: Month="декабря"; break;
+        }
+        return Day + ' ' + Month.slice(0, 3) + '.'
+      },
     },
     created() {
+      axios
+      .get('/init')
+      .then(response => {
+        console.log(response)
+        this.myname = response.data.user.name,
+        this.myid = response.data.user.id
+        console.log(this.myid)
+        window.Echo.private('new_chat.' + this.myid)
+        .listen('New_chat',({data})=>{
+          console.log('Вот сейчас чат должен добавиться')
+          axios
+          .get('/load_chats')
+          .then(response => {
+            this.chats = response.data.chats
+          })
+        })
+      })
       axios
       .get('/load_chats')
       .then(response => {
         this.chats = response.data.chats
         console.log(this.chats)
       })
-      setInterval(this.getNow, 1000);
     }
   }
 </script>

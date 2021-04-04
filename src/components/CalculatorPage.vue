@@ -40,7 +40,13 @@
                 </div>
   		    			<input type="text" placeholder="Затраты на обслуживание (в год)" v-model="calc_service">
   		    			<input type="text" placeholder="Расход топлива в месяц (л.)" v-model="calc_fuel" v-on:click="check">
-  		    			<input type="text" placeholder="Укажите тип топлива" v-model="calc_fuel_type">
+  		    			<div v-on:click="fuel_click">
+                  <v-select :options="options_3" v-model="fuel_choosen" class="style-chooser" style="margin-top: 20px;" placeholder="Тип топлива">
+                    <template slot="no-options">
+                      Ничего не найдёно :\
+                    </template>
+                  </v-select>
+                </div>
   		    			<input type="text" placeholder="Налог на авто" v-model="calc_tax">
   		    		</form>
               <div class="error_block" v-if="calc_error_type == true">
@@ -86,6 +92,8 @@
         options_1: [
         ],
         options_2: [
+        ],
+        options_3: [
         ],
         car_response: [],
         car_response_1: [],
@@ -141,6 +149,9 @@
           .catch(error => {
             console.log(error)
           })
+      },
+      fuel_click() {
+        this.options_3 = ['95','92','98','Газ','ДТ']
       }
     },
     created() {

@@ -18,46 +18,43 @@
           </div>
         </div>
   			<div class="messager_left">
-          <div v-for='(chat, index) in chats'>
-    				<div class="message_block">
-    					<div class="message_block-time">13 окт.</div>
-    					<div class="message_block-title">{{ chat.quest }}</div>
-    					<div class="message_block-suptitle">Менеджер Антон</div>
-    				</div>
-          </div>
-  				<!--<div class="message_block">
-  					<div class="message_block-time">23 окт.</div>
-  					<div class="message_block-title">Предложение по интегра...</div>
-  					<div class="message_block-suptitle">Менеджер Татьяна</div>
-  				</div>
-  				<div class="message_block">
-  					<div class="message_block-time">5 сен.</div>
-  					<div class="message_block-title">Как узнать стоимость авто</div>
-  					<div class="message_block-suptitle">Менеджер Василий</div>
-  				</div>
-  				<div class="message_block">
-  					<div class="message_block-time">9 ноя.</div>
-  					<div class="message_block-title">Калькуляция Lada</div>
-  					<div class="message_block-suptitle">Менеджер Людмила</div>
-  				</div>-->
+          <swiper class="swiper" :options="swiperOption">
+            <div v-for='(chat, index) in chats'>
+              <swiper-slide>
+        				<div class="message_block" @click="my_chat_id = chat.id" v-on:click="chat_listen">
+                  <div v-on:click="local_messages = chat.messages" @click="name = chat.with.name">
+          					<div class="message_block-time">13 окт.</div>
+          					<div class="message_block-title">{{ chat.with.name }}</div>
+          					<div class="message_block-suptitle">Менеджер Антон</div>
+                  </div>
+        				</div>
+              </swiper-slide>
+            </div>
+          </swiper>
   				<div class="message_add" v-on:click="message_add">
   					<img src="../assets/add.png">
   				</div>
   			</div>
   			<div class="messager_right">
-  				<div class="message_status">
-  					<span>Чат создан</span>
-  				</div>
-  				<div class="message_time">
-  					13 октября 2020 г.
-  				</div>
-          <div v-for='(message, index) in messages'>
-    				<div class="message-1">
-    					<div class="message_nick">Менеджер AutoExpenses</div>
-    					<div class="message_message_1">Здравствуйте, можете задавать любые вопросы, возникающие по теме авто</div>
-    					<div class="message_time_main">20:27</div>
-    				</div>
-          </div>
+          <swiper class="swiper" :options="swiperOption">
+            <swiper-slide class="text">
+              <div>
+        				<div class="message_status">
+        					<span>Чат создан</span>
+        				</div>
+        				<div class="message_time">
+        					13 октября 2020 г.
+        				</div>
+                <div v-for='(message, index) in messages'>
+          				<div class="message-1">
+          					<div class="message_nick">{{ name }}</div>
+          					<div class="message_message_1">{{ message.message }}</div>
+          					<div class="message_time_main">20:27</div>
+          				</div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper>
   				<!--<div class="message-2">
 					<div class="message_message_2">Здравствуйте, интересует возможность произвести калькуляцию затрат на мой автомобиль Hyundai Solaris 2018 г. выпуска </div>
 					<div class="message_time_main">20:27</div>
@@ -68,16 +65,19 @@
   					<div class="messagerr" v-on:click="letter"></div>
   				</div>
   				</form>
-          <div style="color: red;" v-on:click="add_button">Добавить</div>
+          <!--<div style="color: red;" v-on:click="add_button">Добавить</div>-->
   			</div>
   		</div>
   	</div>
 </template>
 <style>
+  .swiper {height: 525px;}
+  .swiper-slide.text {height: auto;}
+
   .quest_error span{background-color: rgba(220, 20, 60, 0.6); color: white;}
   .question_title {display: flex; align-items: center;}
   .quest_block {display: flex; align-items: center;}
-  .question_name {width: 450px; height: 150px; background-color: #ADD8E6; border-radius: 0px 0px 6px 0px; position: absolute; top: 0; left: 0; z-index: 5; border: 2px solid #0066CC;}
+  .question_name {width: 450px; height: 180px; background-color: #ADD8E6; border-radius: 0px 0px 6px 0px; position: absolute; top: 0; left: 0; z-index: 5; border: 2px solid #0066CC;}
   .quest_button {font-family: 'Proxima Nova Rg'; font-size: 22px; color: white; font-weight: 300; background-color: #0066CC; border: 2px solid #0066CC; padding: 5px 5px; margin-left: 10px; cursor: pointer;}
 	.messager {width: 1077px; height: 740px; background-color: white; border-radius: 6px 6px 0px 0px; border: 1px solid #0066CC;}
 	.messager_title {width: 100%; height: 62px; background-color: #0066CC; display: flex; align-items: center; padding: 0 26px; justify-content: space-between;}
@@ -107,9 +107,16 @@
 	div.messagerr {width: 16px; height: 11px; border: none; background: url(../assets/icon.png) no-repeat; cursor: pointer;}
 </style>
 <script>
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+  import 'swiper/swiper-bundle.css'
+
   import { bus } from '../main'
   import axios from 'axios'
   export default {
+    components: {
+      Swiper,
+      SwiperSlide
+    },
     data() {
       return {
         messager_title_close_value: -1,
@@ -121,12 +128,28 @@
         letter_text: '',
         messages: [],
         chat_id: '',
-        new_chat_error: ''
+        new_chat_error: '',
+        timestamp: '',
+        message_month: '',
+        my_chat_id: '',
+        name: '',
+        messages_time: [],
+        local_messages: [],
+        swiperOption: {
+          direction: 'vertical',
+          slidesPerView: 'auto',
+          freeMode: true,
+          scrollbar: {
+            el: '.swiper-scrollbar'
+          },
+          mousewheel: true
+        }
       }
     },
     methods: {
       add_button() {
-        this.messages.push({});
+        //this.messages.push({});
+        console.log('Время: ' + this.timestamp)
       },
       messager_title_close() {
         bus.$emit('messager_title_close', this.messager_title_close_value)
@@ -139,23 +162,25 @@
           console.log('заходит в блок')
           this.question_error_status = false,
           this.question_block_status = false,
-          this.chats.push({
-            quest: this.question
-          });
           axios
-            .get('l14.creativityprojectcenter.ru/new_chat?email=' + this.question)
-            .then(response => {
-              if (response.data.new_chat.error != 'Чат уже создан') {
-                this.chat_id = response.data.new_chat.user.id;
-              } else {
-                this.question_error_status = true,
-                this.new_chat_error = 'Ошибка: Чат с данным пользователем уже создан',
-                this.question_block_status = true
-              }
-              console.log(response)
-              console.log('id чата' + this.chat_id + 1)
-            })
-        } else {
+          .get('/new_chat?email=' + this.question)
+          .then(response => {
+            if (response.data.new_chat.error != 'Чат уже создан') {
+              axios
+              .get('/load_chats')
+              .then(response => {
+                this.chats = response.data.chats
+                console.log(this.chats)
+              })
+            } 
+            else {
+              this.question_error_status = true,
+              this.new_chat_error = 'Ошибка: Чат с данным пользователем уже создан',
+              this.question_block_status = true
+            }
+          })
+        } 
+        else {
           this.question_error_status = true,
           this.new_chat_error = 'Ошибка: Нельзя оставлять поле пустым'
         }
@@ -163,20 +188,36 @@
       },
       letter() {
         if (this.letter_text != '' ) {
-          axios.post('l14.creativityprojectcenter.ru/message',{
+          axios.post('/message',{
             message: this.letter_text,
             chat_id:2
           });
         }
+      },
+      chat_listen() {
+        window.Echo.private('chat.' + this.my_chat_id)
+        .listen('PrivateChat',({data})=>{
+          console.log(data.message);
+        }),
+        this.messages = this.local_messages
+        console.log('ID чата: ' + this.my_chat_id)
+      },
+      getNow() {
+        const today = new Date();
+        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const dateTime = date +' '+ time;
+        this.timestamp = dateTime;
       }
     },
     created() {
       axios
-      .get('l14.creativityprojectcenter.ru/load_chats')
+      .get('/load_chats')
       .then(response => {
-        console.log('вот тут начинается chats/load')
-        console.log(response)
+        this.chats = response.data.chats
+        console.log(this.chats)
       })
+      setInterval(this.getNow, 1000);
     }
   }
 </script>

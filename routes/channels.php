@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Chat;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -13,8 +15,17 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-/*
-Broadcast::channel('room.{room_id}', function ($user, $room_id) {
-    //return (int) $user->id === (int) $id;
-    return true;
-});*/
+
+Broadcast::channel('chat.{chat_id}', function ($user, $chat_id) { // $user,
+    $check = Chat::where('id',$chat_id)->first();
+    if ($check->receiver_id == Auth::id() || $check->creator_id == Auth::id()){
+        return (int) true;
+    }
+    return (int) false;
+});
+Broadcast::channel('new_chat.{user_id}', function ($user, $user_id) { // $user,
+    if (Auth::user()->id == $user_id){
+        return (int) true;
+    }
+    return (int) false;
+});

@@ -14,14 +14,14 @@
     <title>Document</title>
 </head>
 <body>
-<div id="app">
 
-</div>
+
 <script src="{{ asset('js/app.js') }}" defer></script>
+
 <script>
 
 </script>
 </body>
 </html>
-<?php
+<?php require '../public/index.html';
 

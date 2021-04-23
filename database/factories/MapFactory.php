@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Car;
+use App\Models\Map;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CarFactory extends Factory
+class MapFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Car::class;
+    protected $model = Map::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,10 @@ class CarFactory extends Factory
     public function definition()
     {
         return [
-            'url_name' => $this,
-            'url_model_name' => $this,
-            'mark' => $this,
-            'model' => $this,
+            'user_id' => $this,
+            'pos1' => $this,
+            'pos2' => $this,
+            'comment' => $this
         ];
     }
 }

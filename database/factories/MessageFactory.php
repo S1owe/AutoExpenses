@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Car;
+use App\Models\Message;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CarFactory extends Factory
+class MessageFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Car::class;
+    protected $model = Message::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,9 @@ class CarFactory extends Factory
     public function definition()
     {
         return [
-            'url_name' => $this,
-            'url_model_name' => $this,
-            'mark' => $this,
-            'model' => $this,
+            'chat_id' => $this,
+            'message' => $this,
+            'sender_id' => $this
         ];
     }
 }

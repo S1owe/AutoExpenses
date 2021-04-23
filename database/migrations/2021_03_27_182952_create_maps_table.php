@@ -15,13 +15,10 @@ class CreateMapsTable extends Migration
     {
         Schema::create('maps', function (Blueprint $table) {
             $table->id();
-            $table->string('from_name',255)->nullable('false');
-            $table->string('to_name',255)->nullable('false');
-            $table->string('from_n',255)->nullable('false');
-            $table->string('from_e',255)->nullable('false');
-            $table->string('to_n',255)->nullable('false');
-            $table->string('to_e',255)->nullable('false');
-            $table->integer('user_id')->nullable('false');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('pos1',255)->nullable('false');
+            $table->string('pos2',255)->nullable('false');
+            $table->string('comment',255)->nullable('false');
             $table->timestamps();
         });
     }

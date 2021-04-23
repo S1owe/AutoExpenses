@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function auth(){
-        //broadcast(new WebsocketDemoEvent('some data'));
+
         if(Auth::check()){
-            view('auth',['auth' => 'true']);
+            view('auth',['auth' => 'true','user'=>Auth::user()]);
         }
         return view('auth',['auth' => 'false']);
     }

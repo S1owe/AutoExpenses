@@ -22,10 +22,10 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'url_name' => $this,
-            'url_model_name' => $this,
-            'mark' => $this,
-            'model' => $this,
+            'event_name' => $this,
+            'event_type' => $this,
+            'event_date' => $this,
+            'event_sum' => $this,
         ];
     }
 }

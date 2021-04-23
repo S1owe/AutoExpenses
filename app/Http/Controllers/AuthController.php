@@ -35,7 +35,7 @@ class AuthController extends Controller
             Auth::login($user);
             return response()->json([
                 'auth' => 'true',
-                'user' => $user->except('password')
+                'user' => $user
 
             ]);
         }
@@ -50,6 +50,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return response()->json([
                 'auth' => 'true',
+                'user' => Auth::user()
 
             ]);
         }
@@ -60,17 +61,14 @@ class AuthController extends Controller
         if ($user) {
             if($remember=="true"){
                 Auth::loginUsingId($user->id,true);
-                return response()->json([
-                    'auth' => 'true',
-                    'user' => $user
-                ]);
+
             }else {
                 Auth::loginUsingId($user->id);
-                return response()->json([
-                    'auth' => 'true',
-                    'user' => $user
-                ]);
             }
+            return response()->json([
+                'auth' => 'true',
+                'user' => Auth::user()
+            ]);
 
         }
         return response()->json([
@@ -92,6 +90,8 @@ class AuthController extends Controller
     }
     public function init(){
         $user = Auth::user();
-        return ["user"=>$user];
+        return [
+            "auth"=>isset($user),
+            "user"=>$user];
     }
 }

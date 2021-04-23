@@ -20,47 +20,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="123a1e33-8eff-40a9-aed4-ceb47dde9f0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Events/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-echo-server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-echo-server.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/AuthPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/CalculatorChart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/CalculatorPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/Chat.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/Map.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/MapMenu.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/MapMenuChart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/MapPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/components/MapSlider.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/New_chat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/PrivateChat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MapFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MessageFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Map.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Map.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CarFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CarFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EventFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EventFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_02_131354_create_maps_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_27_182952_create_maps_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_18_114141_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_31_192706_create_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_18_135851_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_04_170102_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Semibold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/ProximaNova-Semibold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/connect-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/footer-img.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/map-item-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/connect-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Semibold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/fonts/ProximaNova-Semibold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/footer-img.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/map-item-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/AuthPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/CalculatorChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/CalculatorPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Chat.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Footer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Header.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/Map.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/MapMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/MapMenuChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/MapPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/components/MapSlider.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/router/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/private.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +233,9 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/jaeger/phpquery-single" />
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oOqf8TrLIi0rA8xeY1qJEmxIUq" />
@@ -206,7 +250,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -225,15 +269,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\ANY_PROJECTS\service\resources\views" />
-      <recent name="E:\ANY_PROJECTS\service\resources" />
-      <recent name="E:\ANY_PROJECTS\service\resources\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\ANY_PROJECTS\service\resources" />
       <recent name="E:\ANY_PROJECTS\service\resources\components" />
       <recent name="E:\ANY_PROJECTS\service\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ANY_PROJECTS\service\resources\views" />
+      <recent name="E:\ANY_PROJECTS\service\resources" />
+      <recent name="E:\ANY_PROJECTS\service\resources\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -289,6 +333,27 @@
       <workItem from="1616091433101" duration="22327000" />
       <workItem from="1616412125396" duration="16398000" />
       <workItem from="1616515906679" duration="4049000" />
+      <workItem from="1616838641247" duration="10482000" />
+      <workItem from="1616934648088" duration="10839000" />
+      <workItem from="1616962282232" duration="12287000" />
+      <workItem from="1616974694463" duration="280000" />
+      <workItem from="1617003358620" duration="4110000" />
+      <workItem from="1617028820863" duration="201000" />
+      <workItem from="1617048355072" duration="759000" />
+      <workItem from="1617051609533" duration="64000" />
+      <workItem from="1617053432985" duration="5073000" />
+      <workItem from="1617112987298" duration="17641000" />
+      <workItem from="1617183273855" duration="8068000" />
+      <workItem from="1617216956888" duration="5136000" />
+      <workItem from="1617225217634" duration="4294000" />
+      <workItem from="1617286419023" duration="1278000" />
+      <workItem from="1617461853778" duration="1951000" />
+      <workItem from="1617479721490" duration="186000" />
+      <workItem from="1617533136975" duration="1828000" />
+      <workItem from="1617555140324" duration="8090000" />
+      <workItem from="1617571368889" duration="293000" />
+      <workItem from="1617607727502" duration="2173000" />
+      <workItem from="1617612944718" duration="1547000" />
     </task>
     <servers />
   </component>
@@ -311,14 +376,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="420" y="187" key="#Deployment" timestamp="1615830000186">
+    <state x="420" y="187" key="#Deployment" timestamp="1617130016692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="420" y="187" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1615830000186" />
-    <state x="536" y="165" key="#SSH_Configurations" timestamp="1615829999449">
+    <state x="420" y="187" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1617130016692" />
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1617130008639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040@0.0.1920.1040" timestamp="1615829999449" />
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040@0.0.1920.1040" timestamp="1617130008639" />
     <state x="414" y="175" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614259649288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -327,14 +392,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="731" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613227090061" />
+    <state x="708" y="11" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1617555399546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="708" y="11" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617555399546" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615123059561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615123059561" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616067641739">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617613522224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616067641739" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617613522224" />
     <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1616073721089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -375,10 +444,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="845" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1614978381938" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1616407530466">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1616933972551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616407530466" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616933972551" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616095698084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -47,7 +48,14 @@ class User extends Authenticatable
     public function getJWTIdentifier() {
         return $this->getKey();
     }
-
+    public function maps(): HasMany
+    {
+        return $this->hasMany(Map::class);
+    }
+    public function chats(): HasMany
+    {
+        return $this->hasMany(Chat::class);
+    }
     /**
      * Return a key value array, containing any custom claims to be added to the JWT.
      *
